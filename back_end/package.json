@@ -1,0 +1,45 @@
+{
+  "name": "trip-adv",
+  "version": "1.0.0",
+  "description": "A tool to scrape Trip Advisor",
+  "main": "nyc.js",
+  "scripts": {
+    "test": "mocha -R spec test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jacobshomstein@bitbucket.org/jacobshomstein/trip-adv.git"
+  },
+  "author": "Jacob Shomstein, Gabriel Lopez",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jacobshomstein/trip-adv#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.17.2",
+    "chai": "^3.5.0",
+    "cheerio": "^0.20.0",
+    "child_process": "^1.0.2",
+    "clear": "0.0.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "googleapis": "^19.0.0",
+    "https": "^1.0.0",
+    "json2csv": "^3.7.3",
+    "jsonfile": "^2.4.0",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.27",
+    "mongoose": "^4.10.4",
+    "nodemailer": "^2.6.4",
+    "promises": "^0.2.5",
+    "request-promise": "^3.0.0",
+    "superagent": "^2.3.0",
+    "system-sleep": "^1.3.5",
+    "utf8": "^2.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "The Beekman, A Thompson Hotel",
+    "certificate": false,
+    "id": 8615610,
+    "url": "https://www.tripadvisor.com/Hotel_Review-g60763-d8615610-Reviews-The_Beekman_A_Thompson_Hotel-New_York_City_New_York.html/BackUrl",
+    "address": "123 Nassau St, New York City, NY 10038-2415",
+    "phone_number": "00 1 212-233-2300",
+    "forbes_rating": 5,
+    "rating": 5,
+    "ranking": {
+        "num": "10",
+        "total": "468",
+        "text": "#10 of 468 Hotels in New York City"
+    },
+    "room_num": 0,
+    "keywords": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "tags": [],
+    "terrible": 1,
+    "poor": 4,
+    "average": 9,
+    "very_good": 39,
+    "excellent": 301,
+    "total_reviews": 354,
+    "max_page": 6
+}

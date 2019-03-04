@@ -1,0 +1,101 @@
+{
+    "review_sleep_time": 2,
+    "hotel_sleep_time": 6,
+    "hotel_timeout_time": 40,
+    "hotel_timeout_sleep_time": 10,
+    "db_url": "mongodb://jshom:jshom@ds031186-a0.mlab.com:31186",
+    "cities": {
+        "atlanta": {
+            "name": "Atlanta",
+            "url": "https://www.tripadvisor.com/Hotels-g60898-Atlanta_Georgia-Hotels.html"
+        },
+        "austin": {
+            "name": "Austin",
+            "url": "https://www.tripadvisor.com/Hotels-g30196-Austin_Texas-Hotels.html"
+        },
+        "boston": {
+            "name": "Boston",
+            "url": "https://www.tripadvisor.com/Hotels-g60745-Boston_Massachusetts-Hotels.html"
+        },
+        "charlotte": {
+            "name": "Charlotte",
+            "url": "https://www.tripadvisor.com/Hotels-g49022-Charlotte_North_Carolina-Hotels.html"
+        },
+        "chicago": {
+            "name": "Chicago",
+            "url": "https://www.tripadvisor.com/Hotels-g35805-Chicago_Illinois-Hotels.html"
+        },
+        "dallas": {
+            "name": "Dallas",
+            "url": "https://www.tripadvisor.com/Hotels-g55711-Dallas_Texas-Hotels.html"
+        },
+        "denver": {
+            "name": "Denver",
+            "url": "https://www.tripadvisor.com/Hotels-g33388-Denver_Colorado-Hotels.html"
+        },
+        "houston": {
+            "name": "Houston",
+            "url": "https://www.tripadvisor.com/Hotels-g56003-Houston_Texas-Hotels.html"
+        },
+        "la": {
+            "name": "Los Angeles",
+            "url": "https://www.tripadvisor.com/Hotels-g32655-Los_Angeles_California-Hotels.html"
+        },
+        "memphis": {
+            "name": "Memphis",
+            "url": "https://www.tripadvisor.com/Hotels-g55197-Memphis_Tennessee-Hotels.html"
+        },
+        "miami": {
+            "name": "Miami",
+            "url": "https://www.tripadvisor.com/Hotels-g34438-Miami_Florida-Hotels.html"
+        },
+        "myrtle_beach": {
+            "name": "Myrtle Beach",
+            "url": "https://www.tripadvisor.com/Hotels-g54359-Myrtle_Beach_South_Carolina-Hotels.html"
+        },
+        "nashville": {
+            "name": "Nashville",
+            "url": "https://www.tripadvisor.com/Hotels-g55229-Nashville_Tennessee-Hotels.html"
+        },
+        "new_orleans": {
+            "name": "New Orleans",
+            "url": "https://www.tripadvisor.com/Hotels-g60864-New_Orleans_Louisiana-Hotels.html"
+        },
+        "nyc": {
+            "name": "New York City",
+            "url": "https://www.tripadvisor.com/Hotels-g60763-New_York_City_New_York-Hotels.html"
+        },
+        "orlando": {
+            "name": "Orlando",
+            "url": "https://www.tripadvisor.com/Hotels-g34515-Orlando_Florida-Hotels.html"
+        },
+        "philadelphia": {
+            "name": "Philadelphia",
+            "url": "https://www.tripadvisor.com/Hotels-g60795-Philadelphia_Pennsylvania-Hotels.html"
+        },
+        "phoenix": {
+            "name": "Phoenix",
+            "url": "https://www.tripadvisor.com/Hotels-g31310-Phoenix_Arizona-Hotels.html"
+        },
+        "san_fransicsco": {
+            "name": "San Francisco",
+            "url": "https://www.tripadvisor.com/Hotels-g60713-San_Francisco_California-Hotels.html"
+        },
+        "scottsdale": {
+            "name": "Scottsdale",
+            "url": "https://www.tripadvisor.com/Hotels-g31350-Scottsdale_Arizona-Hotels.html"
+        },
+        "seattle": {
+            "name": "Seattle",
+            "url": "https://www.tripadvisor.com/Hotels-g60878-Seattle_Washington-Hotels.html"
+        },
+        "brooklyn": {
+            "name": "Brooklyn",
+            "url": "https://www.tripadvisor.com/Hotels-g60827-Brooklyn_New_York-Hotels.html"
+        },
+        "san_diego": {
+            "name": "San Diego",
+            "url": "https://www.tripadvisor.com/Hotels-g60750-San_Diego_California-Hotels.html"
+        }
+    }
+}

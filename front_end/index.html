@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <!--FireBase Setup -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAd3oVI-IQDrwso2PyIYVvLGpWasEqYTnY",
+      authDomain: "tripadv-132dc.firebaseapp.com",
+      databaseURL: "https://tripadv-132dc.firebaseio.com",
+      storageBucket: "tripadv-132dc.appspot.com",
+    };
+    firebase.initializeApp(config);
+
+    var provider = new firebase.auth.GoogleAuthProvider()
+
+     //-- Google Provider
+     provider.addScope('https://www.googleapis.com/auth/plus.login')
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.js"></script>
+  <script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+  <script src='https://code.angularjs.org/1.5.7/angular-route.js'></script>
+  <script language="javascript" type="text/javascript" src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="styles.css" rel="stylesheet">
+
+
+  <title>Trip Advisor Search</title>
+
+</head>
+
+<body>
+<div ng-controller="loginCtrl" ng-hide="allowRequest===true">
+  <img src="bg.jpg" id="loginlogo"></img>
+  <div class="signIn">
+      <button ng-click="login()" class='btn btn-default btn-lg' name="button">{{signInText}}</p>
+  </div>
+</div>
+
+<div ng-controller="loginCtrl" ng-show="allowRequest===true">
+  <!-- Alice Logo -->
+  <div class="topHeader" ng-controller='loginCtrl'>
+    <div class="aliceBox" align-content="center">
+      <img src="aliceLog.jpg" class="aliceLogo center text-center" align-content=center ></img>
+    </div>
+  </div>
+
+  <!-- Search Box -->
+  <div class="search col-sm-3">
+
+    <div class="top" id="searchContainer">
+      <br>
+      <div class="rightTitle">
+        <h2 class="text-center toptext">SEARCH FOR HOTELS</h2>
+        <br><br>
+      </div>
+
+
+      <div class="boxesDiv">
+
+        <div id="cityGroup">
+          <h5 class='col-sm-2'>City: </h5>
+          <div class="col-sm-10">
+            <div ng-controller="ddController">
+              <select class="form-control" id='city'>
+                <option ng-repeat="city in cities">{{city}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- make some room  -->
+        <div class="spacer" style="height: 50px"></div>
+        <!-- make some room -->
+
+        <div id="first">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[0]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[0]'></input>
+          </div>
+        </div>
+        <br>
+
+        <div id="Second">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[1]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[1]'></input>
+          </div>
+        </div>
+
+        <div id="Third">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[2]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[2]'></input>
+          </div>
+        </div>
+
+        <div id="Fourth">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[3]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[3]'></input>
+          </div>
+        </div>
+
+        <div id="Fifth">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[4]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[4]'></input>
+          </div>
+        </div>
+
+        <div id="Sixth">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[5]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[5]'></input>
+          </div>
+        </div>
+
+        <div id="Seventh">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[6]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[6]'></input>
+          </div>
+        </div>
+
+        <div id="Eigth">
+          <div class="col-sm-12">
+            <div ng-controller="ddController">
+              <select class="form-control" ng-model='Data.Property[7]'>
+                <option ng-repeat="filter in filters">{{filter}}</option>
+              </select>
+    	    	</div>
+          </div>
+          <div class="col-sm-12" ng-controller="ddController">
+            <input type="text" class="form-control inputBox" id="searchBox" ng-model='Data.SearchValue[7]'></input>
+          </div>
+        </div>
+      </div>
+
+      <div ng-controller="sResController">
+        <button class='btn btn-lg btn-default searchbtn' ng-click="search()">Search</button>  <!-- WHERE SEARCH WAS -->
+        <br><br><br><br><br><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Terms
+  <div class='col-sm-12 searchTerms' ng-controller='sResController'>
+    <div>
+      <span class='searchWords'>Searching for: {{Data.SearchValue}}</span>
+    </div>
+  </div>  -->
+
+  <!-- Middle -->
+  <div class="search_result col-sm-3 last" ng-controller="sResController">
+    <div class= "hotelNumHits" ng-show="isSearched()">
+      Number of Results: {{hotelNum}}
+    </div>
+      <ul class='hotelList' ng-repeat="hotel in hotels">
+        <div class="hotelListing"  ng-click="setHotel(hotel.id); $rootScope.areTagsEdited = false">
+        <li class="listText">
+          {{hotel.name.toUpperCase()}}
+        </li>
+      </div>
+      </ul>
+
+  </div>
+
+  <!-- Right side -->
+  <div class="selHotel col-sm-6" ng-controller="selHotelController">
+    <div class="righttop">
+      <h3 id="selHotelName"><strong>{{hotel.hotel[0].name}}</strong></h3>
+
+      <div ng-show="isSel()" class='tag-group form-group'>
+        <!-- add tag to end -->
+        <button class='add-tag' ng-click='addTag()'>
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <!-- the tags -->
+        <input class='tag-input form-control' ng-show="isSel()" ng-repeat='tag in hotel.hotel[0].user_tags track by $index' ng-model='localTags[$index]' ng-value='tag'>
+        <!-- delete last tag -->
+        <button  ng-click='deleteLastTag()' class="add-tag">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        <!-- save tags -->
+        <button ng-click='saveStateOfTags()' class="add-tag">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div ng-show="isSel()" class="alice_color"><strong>ID : {{showID()}}</strong></div>
+      <div ng-show="isSel()"><strong>{{setUserTags()}}</strong><br></div>
+
+      <div ng-show="isSel()"><a target="_blank" ng-href="{{getURL()}}">Link to Trip Advisor</a></div>
+      <div ng-show="isSel()"><a target="_blank" ng-href="{{getSalesforceLink()}}">{{showSalesforceLink()}}</a></div>
+      <a ng-show='isSel()' href='#' ng-click='exportSnaps()'>Export Snapshots to Excel</a><br><br>
+
+      {{getAddress()}}
+      <div ng-show='isSel()'>{{showPhone()}}</div>
+      {{getRanking()}}
+
+      <br class="selhotelLineBreak">{{getForbes()}}<span ng-show="isSel()" class="verticalBreak"> | </span>{{getRooms()}}
+      <br class="selhotelLineBreak">{{getOverallR()}}<span ng-show="isSel()" class="verticalBreak"> | </span>{{getCertificate()}}
+      <br class="selhotelLineBreak">{{getExcellentR()}}  {{getGoodR()}}  {{getAverageR()}}  {{getPoorR()}}  {{getTerribleR()}}
+    <!--   <br><span class="blue" data-toggle="collapse" data-target="#tags">{{getTags()}}</span>
+      <div id="tags" class="collapse">
+          <div class="ts"ng-repeat='tag in hotel.tags'>{{tag}}</div>
+      </div>
+
+      <br>{{getTags()}}
+    <br><span ng-click="reviewSearch()" class="blue">{{getReviews()}}</span>-->
+
+    </div>
+  <div class="rightbottom">
+    <a id="allReviews" ng-show="isSel()" ng-click="switchRevs()">{{Data.reviewtoggle}}</a>
+    <br><span ng-show="isSel()">Number of Reviews: {{reviewsCount}}
+      <br><br>
+      <ul class=" bulletless" ng-repeat="review in reviews">
+        <li>
+          <span class="reviewBy"><strong>Review By:</strong> {{review.user.name}}</span>
+          <br id="reviewBreak"><span class='dateMobile'><em>Written: {{convertDate(review.written_time)}} Mobile: {{Data.BooleanCoverter(review.written_by_mobile)}}</em></span>
+          <br> Rating: {{review.rating}}/5
+          <br><br>{{review.text}}<br>
+          <br><em>Response: {{getResponseText(review)}}</em>
+          <!-- {{highlightKeywords()}} -->
+        <!--  <br><br> {{getResponseTime(review)}} -->
+          <br><br>
+          <hr class="reviewLine">
+        </li>
+      </ul>
+
+  </div>
+  <button class='btn btn-default' ng-show='isSel()' ng-click='next()'>More Reviews</button><br><br>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/7.0.2/jquery.mark.es6.js"></script>
+</div>
+</body>
+</html>

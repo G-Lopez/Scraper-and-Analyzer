@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trip | Admin</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    /*td:nth-child(2) {
+      position: relative;
+      left: 20px;
+    }
+    */
+    .bar {
+      background: grey;
+    }
+
+    .table {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main -->
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="data"></div>
+      </div>
+      <div class="col-md-4 part2">
+        <h2>Add New City</h2>
+        <div class="form-group">
+          Name of City: <input type="text" class='form-control' id="city_name"><br>
+          URL : <input type="text" class='form-control' id="city_url"><br>
+          <button class="btn btn-lg btn-success" name="button">Add City</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Scripts and refs below -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src='admin.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
+</body>
+</html>
